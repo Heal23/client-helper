@@ -5,6 +5,8 @@ import Home from './components/Home';
 import Accounts from './components/Accounts';
 import Expenses from './components/Expenses';
 import Savings from './components/Savings';
+import './App.css'; 
+
 
 function App() {
   return (
