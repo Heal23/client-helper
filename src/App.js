@@ -1,28 +1,23 @@
-// client-helper/src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import CreateAccount from './components/CreateAccount';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import Accounts from './components/Accounts';
+import Expenses from './components/Expenses';
+import Savings from './components/Savings';
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <div className="App">
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/create-account">Create Account</a></li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/create-account" element={<CreateAccount />} />
-          <Route path="/" exact element={<div>Welcome to the Financial Helper App</div>} />
-        </Routes>
-      </div>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/accounts" element={<Accounts />} />
+        <Route path="/expenses" element={<Expenses />} />
+        <Route path="/savings" element={<Savings />} />
+      </Routes>
     </Router>
   );
-};
+}
 
 export default App;
-
-
